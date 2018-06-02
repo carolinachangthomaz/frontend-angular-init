@@ -14,11 +14,11 @@ export class LoginInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       let autRequest: any;
-
+    
       if(this.filtro.isLoggedIn()){
         autRequest = req.clone({
             setHeaders: {
-                'Authorization' : this.filtro.token
+                'Authorization' : req.headers.get('Authorization').substr(7)
             }
         });
         return next.handle(autRequest);

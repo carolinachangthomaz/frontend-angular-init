@@ -1,11 +1,11 @@
-import { User } from './../model/user.model';
 import { Injectable, EventEmitter } from '@angular/core';
+import { CredenciaisDTO } from '../model/credenciaisDTO.model';
 
 @Injectable()
 export class FiltroService {
 
   public static instance : FiltroService = null;
-  user: User;
+  cred: CredenciaisDTO;
   token: string;
   showTemplate = new EventEmitter<boolean>();
   constructor() {
@@ -20,9 +20,9 @@ export class FiltroService {
    }
 
    isLoggedIn():boolean{
-    if(this.user == null){
+    if(this.cred == null){
       return false;
     }
-    return this.user.email != '';
+    return this.cred.email != '';
    }
 }

@@ -1,5 +1,5 @@
-import { User } from './user.model';
+import { CredenciaisDTO } from './credenciaisDTO.model';
 export class CurrentUser{
     public token: string;
-    public user: User;
+    public cred: CredenciaisDTO;
 }

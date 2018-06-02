@@ -1,7 +1,7 @@
 <div class="col-md-4" style="margin-left: 20%">
   <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">Help Desk | Login</h3>
+      <h3 class="box-title">Login</h3>
     </div>
     <form class="form-horizontal" #form="ngForm" (ngSubmit)="login()">
       <div class="alert alert-error" role="alert" *ngIf="message">
@@ -13,7 +13,7 @@
           <div class="col-sm-10">
             <input 
                   type="email" 
-                  [(ngModel)]="user.email"
+                  [(ngModel)]="cred.email"
                   class="form-control" 
                   name="email"
                   id="inputEmail" 
@@ -24,19 +24,19 @@
           </div>
         </div>
 
-        <div [ngClass]="getFromGroupClass(password.invalid,password.dirty)">
-            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+        <div [ngClass]="getFromGroupClass(senha.invalid,senha.dirty)">
+            <label for="inputSenha" class="col-sm-2 control-label">Senha</label>
             <div class="col-sm-10">
               <input 
                     type="password" 
-                    [(ngModel)]="user.password"
+                    [(ngModel)]="cred.senha"
                     class="form-control" 
-                    name="password"
-                    id="inputPassword" 
-                    #password="ngModel"
-                    placeholder="Password"
+                    name="senha"
+                    id="inputSenha" 
+                    #senha="ngModel"
+                    placeholder="senha"
                     required>
-                    <span class="help-block" *ngIf="password.invalid &&  password.dirty">Senha obrigatória</span>
+                    <span class="help-block" *ngIf="senha.invalid &&  senha.dirty">Senha obrigatória</span>
             </div>
           </div>
       </div>
